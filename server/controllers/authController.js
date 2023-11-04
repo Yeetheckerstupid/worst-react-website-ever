@@ -29,7 +29,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     },
   });
 });
-/*
+
 exports.login = catchAsync(async (req, res, next) => {
   console.log('test1');
   const { email, password } = req.body;
@@ -69,9 +69,8 @@ exports.login = catchAsync(async (req, res, next) => {
     },
   });
 });
-*/
 
-/*
+
 //this middleware function should be used for protecting admin routes
 exports.protect = catchAsync(async (req, res, next) => {
   //1) Get token and check if it exists
@@ -120,14 +119,14 @@ exports.protect = catchAsync(async (req, res, next) => {
   res.locals.user = currentUser;
   next();
 });
-*/
 
 // NEW SHITTY CODE THAT DOES ALMOST THE SAME THING
 
+/*
 exports.login(req, res) {
 	try {
 		//check if user exists
-		cont user = await User.findOne({ username: req.body.username });
+		const user = await User.findOne({ username: req.body.username });
 		if (user) {
 			//check if password matches
 			const result = req.body.password === user.password;
@@ -204,3 +203,4 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   }
 });
 exports.resetPassword = (req, res, next) => { };
+*/
