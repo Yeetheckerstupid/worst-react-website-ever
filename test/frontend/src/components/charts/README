@@ -1,0 +1,7 @@
+As of 8/3/23 the charts in this folder are using fake data
+
+LineChart.js is the only example of a chart using data from a db.
+The rest of the charts have hardcoded data
+
+
+

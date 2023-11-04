@@ -1,0 +1,93 @@
+const User = require('../models/userModel');
+const solarData = require('../models/solarModel');
+const catchAsync = require('../utils/catchAsync');
+const { Pool } = require('pg');
+
+exports.getAllSolarData = catchAsync(async (req, res) => {
+  const sol = await solarData.find();
+
+  res.status(200).json({
+    status: 'success',
+    results: sol.length,
+    data: {
+      sol,
+    },
+  }); 
+});
+
+// This route is used for pulling data for graphs on the DER page.
+// This will eventually change when real data is available in DB
+exports.getSQL = catchAsync(async (req, res) => {
+  const pool = new Pool({
+    user: 'sqluser',
+    password: 'test1234',
+    host: 'localhost',
+    port: 5432,
+    database: 'ics',
+  });
+
+  try {
+    const response = await pool.query('SELECT * FROM power_usage;');
+    const eff = await pool.query('SELECT * FROM efficiencies;');
+    const temps = await pool.query('SELECT * FROM temperature;')
+
+    console.log(response.rows, '\n');
+    res.status(200).json({
+      status: 'success',
+      data: {
+        data: response.rows,
+        eff: eff.rows,
+        temp: temps.rows
+
+      },
+      message: 'database connection successfully established',
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      status: 'error',
+      message: 'failed to connect',
+    });
+  }
+});
+
+
+
+// Some of the routes below can be used if others think they can be useful.
+
+// exports.getAllUsers = catchAsync(async (req, res) => {
+//   const users = await User.find();
+
+//   res.status(200).json({
+//     status: 'success',
+//     results: users.length,
+//     data: {
+//       users,
+//     },
+//   });
+// });
+
+// exports.getUser = (req, res) => {
+// res.status(500).json({
+// status: 'error',
+// message: 'This route is not yet defined',
+// });
+// };
+// exports.createUser = (req, res) => {
+//   res.status(500).json({
+//     status: 'error',
+//     message: 'This route is not yet defined',
+//   });
+// };
+// exports.updateUser = (req, res) => {
+// res.status(500).json({
+// status: 'error',
+// message: 'This route is not yet defined',
+// });
+// };
+// exports.deleteUser = (req, res) => {
+// res.status(500).json({
+// status: 'error',
+// message: 'This route is not yet defined',
+// });
+// };

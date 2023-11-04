@@ -1,0 +1,29 @@
+.footer_wrapper {
+  /* display: flex; */
+  background-color: black;
+  padding: 0 30px 0 30px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_links {
+  list-style: none;
+}
+
+.footer_links li {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.footer_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.footer_links li a:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}

@@ -1,0 +1,14 @@
+.authroute {
+   height: 100%;
+   background-color: lightcoral; 
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.unauth-txt {
+   font-size: 40px;
+   font-weight: 600;
+   margin-bottom: 40px;
+}

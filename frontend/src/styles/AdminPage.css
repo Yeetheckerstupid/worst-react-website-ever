@@ -1,0 +1,151 @@
+/* AdminPage.css */
+
+.flex {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  /* background-color: #f5f5f5; */
+  width: 20%;
+  /* padding: 20px; */
+  background-color: #8CC63F;
+}
+
+.links {
+  width: 100%;
+  height: 35%;
+}
+
+.links ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.links li {
+  /* margin-bottom: 10px; */
+  background-color: #8CC63F;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.links button {
+  text-decoration: none;
+  padding: 0px;
+  border-radius: 0px;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.links button:hover {
+  color: #000000;
+  font-weight: bold;
+  border: none;
+}
+
+.admin-container {
+  background-color: rgb(44, 44, 44);
+  color: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  max-height: calc(100vh - 200px);
+  /* Adjust the height based on your layout */
+  /* max-height: 500px; Adjust the height as needed */
+}
+
+.requests {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  display: flex;
+  /* flex-direction: column; */
+  background-color: #ffffff;
+  /* padding: 20px; */
+  /* border: 1px solid #dddddd; */
+  border-radius: 5px;
+  color: black;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: 10px; */
+  overflow: hidden !important;
+}
+
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  /* background-color: aqua; */
+  /* background: linear-gradient(to bottom, #e0e0e0, #f5f5f5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(to bottom, #d3d3d3, #f5f5f5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  /* Adjust the height as needed */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+
+}
+
+.card-footer {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  border-top: 1px solid #dddddd;
+  background: linear-gradient(to top, #d3d3d3, #f5f5f5);
+  border-radius: 0 0 10px 10px;
+
+}
+
+
+.card-footer button {
+  margin-left: auto;
+  padding: 10px 25px;
+  background-color: #f704009f;
+  color: #3f3f3f;
+  border: none;
+  cursor: pointer;
+  /* transition: all 0.3s ease 0s; */
+  transition: background .2s ease-in-out;
+}
+
+.card-footer button:hover {
+  transform: scale(1.1);
+  /* Optional: Apply a scaling effect on hover */
+}
+
+.adminPageParagraphs {
+  padding: 10px;
+}
+
+.adminJobPositions {
+  padding: 10px 50px;
+}

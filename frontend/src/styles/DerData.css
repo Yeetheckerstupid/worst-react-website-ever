@@ -1,0 +1,51 @@
+/* .der-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+h2 {
+  margin: 0;
+}
+
+.der-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+
+ 
+  
+}
+.title {
+  /* grid-column: span 3; */
+  grid-column: 1 / -1; /* Span across all columns */
+  grid-row: 1;
+  background-color: aliceblue;
+
+}
+.box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  background-color: aliceblue;
+  min-width: 200px; 
+  /* max-height: 650px; */
+}
+/* [class^='box-'] {
+  background-color: aliceblue;
+  border: 10px solid black;
+}
+
+.box-3 {
+  justify-self: center;
+}
+.box-4 {
+  justify-self: center;
+} */
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+}
